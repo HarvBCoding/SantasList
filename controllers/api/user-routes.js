@@ -39,12 +39,31 @@ router.get("/:id", (req, res) => {
 });
 
 // create a new user
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   User.create(req.body)
     .then((user) => res.json(user))
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(400).json(err);
+    });
+});
+
+// Update a user
+router.put("/:id", (req, res) => {
+  User.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  })
+    .then((userData) => {
+      if (!userData) {
+        res.status(404).json({ message: "No user found with this ID" });
+        return;
+      }
+      res.json(userData);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
     });
 });
 
