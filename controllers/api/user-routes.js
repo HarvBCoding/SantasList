@@ -47,59 +47,59 @@ router.post("/", (req, res) => {
         req.session.username = userData.username;
         req.session.loggedIn = true;
 
-        res.json(userData)
-      })
-    }).catch((err) => {
+        res.json(userData);
+      });
+    })
+    .catch((err) => {
       console.log(err);
       res.status(400).json(err);
     });
 });
 
-router.post('/login', (req, res) => {
+router.post("/login", (req, res) => {
   User.findOne({
     where: {
-      email: req.body.email
+      email: req.body.email,
+    },
+  }).then((userData) => {
+    if (!userData) {
+      res.status(400).json({ message: "No user with that email address" });
+      return;
     }
-  })
-    .then(userData => {
-      if (!userData) {
-        res.status(400).json({ message: 'No user with that email address'});
-        return;
-      }
 
-      // verify user
-      const validPassword = userData.checkPassword(req.body.password);
+    // verify user
+    const validPassword = userData.checkPassword(req.body.password);
 
-      if (!validPassword) {
-        res.status(400).json({ message: 'Incorrect password'});
-        return;
-      }
-      req.session.save(()=> {
-          req.session.user_id = userData.id
-          req.session.user_name = userData.user_name
-          req.session.loggedIn = true
-          res.json({ user: userData, message: 'You are now logged in!'});
-      })
+    if (!validPassword) {
+      res.status(400).json({ message: "Incorrect password" });
+      return;
+    }
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.user_name = userData.user_name;
+      req.session.loggedIn = true;
+      res.json({ user: userData, message: "You are now logged in!" });
     });
+  });
 });
 
-// Log out Route 
+// Log out Route
 router.post("/logout", (req, res) => {
-    if (req.session.loggedIn){
-        req.session.destroy(()=> {
-            res.status(204).end();
-        })
-    } else {
-        res.status(404).end();
-    }
-})
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 // Update a user
 router.put("/:id", (req, res) => {
   User.update(req.body, {
     where: {
-      id: req.params.id
-    }
+      id: req.params.id,
+    },
   })
     .then((userData) => {
       if (!userData) {
@@ -114,20 +114,20 @@ router.put("/:id", (req, res) => {
 });
 
 // delete user
-router.delete('/:id', (req, res) => {
+router.delete("/:id", (req, res) => {
   User.destroy({
     where: {
-      id: req.params.id
-    }
+      id: req.params.id,
+    },
   })
-    .then(userData => {
+    .then((userData) => {
       if (!userData) {
-        res.status(404).json({ message: 'No user found with this id'});
+        res.status(404).json({ message: "No user found with this id" });
         return;
       }
       res.json(userData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
