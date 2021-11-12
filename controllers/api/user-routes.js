@@ -41,8 +41,15 @@ router.get("/:id", (req, res) => {
 // create a new user
 router.post("/", (req, res) => {
   User.create(req.body)
-    .then((user) => res.json(user))
-    .catch((err) => {
+    .then((userData) => {
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.username = userData.username;
+        req.session.loggedIn = true;
+
+        res.json(userData)
+      })
+    }).catch((err) => {
       console.log(err);
       res.status(400).json(err);
     });
