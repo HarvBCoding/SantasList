@@ -38,4 +38,14 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// create a new user
+router.post('/', (req, res) => {
+  User.create(req.body)
+    .then((user) => res.json(user))
+    .catch(err => {
+      console.log(err);
+      res.status(400).json(err);
+    });
+});
+
 module.exports = router;
