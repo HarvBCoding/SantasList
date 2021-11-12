@@ -67,9 +67,25 @@ router.post('/login', (req, res) => {
         res.status(400).json({ message: 'Incorrect password'});
         return;
       }
-      res.json({ user: userData, message: 'You are now logged in!'});
+      req.session.save(()=> {
+          req.session.user_id = userData.id
+          req.session.user_name = userData.user_name
+          req.session.loggedIn = true
+          res.json({ user: userData, message: 'You are now logged in!'});
+      })
     });
 });
+
+// Log out Route 
+router.post("/logout", (req, res) => {
+    if (req.session.loggedIn){
+        req.session.destroy(()=> {
+            res.status(204).end();
+        })
+    } else {
+        res.status(404).end();
+    }
+})
 
 // Update a user
 router.put("/:id", (req, res) => {
