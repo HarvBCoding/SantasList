@@ -17,23 +17,35 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-  }).then((recipientData) => {
-    if (!recipientData) {
-      res.status(404).json({
-        message: "No recipient found with this id",
-      });
-      return;
-    }
-    res.json(recipientData);
   })
-  .catch((err)=> {
+    .then((recipientData) => {
+      if (!recipientData) {
+        res.status(404).json({
+          message: "No recipient found with this id",
+        });
+        return;
+      }
+      res.json(recipientData);
+    })
+    .catch((err) => {
       res.status(500).json(err);
       console.log(err);
-  })
+    });
 });
 
 // create new recipient
-router.post("/", (req, res) => {});
+router.post("/", (req, res) => {
+  Recipient.create({
+    name: req.body.name,
+    relationship: req.body.relationship,
+    user_id: req.session.user_id,
+  })
+    .then((recipientData) => res.json(recipientData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 // update recipient
 router.put("/:id", (req, res) => {});
