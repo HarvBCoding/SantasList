@@ -75,7 +75,22 @@ router.put("/:id", (req, res) => {
 
 // delete a recipient
 router.delete("/:id", (req, res) => {
-  
+  Recipient.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((recipientData) => {
+      if (!recipientData) {
+        res.status(404).json({ message: "No Recipient found with that id" });
+        return;
+      }
+      res.json(recipientData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
