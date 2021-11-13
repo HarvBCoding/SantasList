@@ -48,9 +48,34 @@ router.post("/", (req, res) => {
 });
 
 // update recipient
-router.put("/:id", (req, res) => {});
+router.put("/:id", (req, res) => {
+  Recipient.update(
+    {
+      name: req.body.name,
+      relationship: req.body.relationship
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+    .then(recipientData => {
+      if (!recipientData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(recipientData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 // delete a recipient
-router.delete("/:id", (req, res) => {});
+router.delete("/:id", (req, res) => {
+  
+});
 
 module.exports = router;
