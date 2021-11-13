@@ -63,33 +63,33 @@ router.post('/', (req, res) => {
 
 // log in route
 router.post('/login', (req, res) => {
+  console.log('request', req.body);
   User.findOne({
-      where: {
-          email: req.body.email
-      }
+    where: {
+      email: req.body.email
+    }
   }).then(userData => {
-      if (!userData) {
-          res.status(400).json({ message: 'No user with that email address' });
-          return;
-      }
+    if (!userData) {
+      res.status(400).json({ message: 'No user with that email address' });
+      return;
+    }
 
-      const validPassword = userData.checkPassword(req.body.password);
+    const validPassword = userData.checkPassword(req.body.password);
 
-      if (!validPassword) {
-          res.status(400).json({ message: 'Incorrect password' });
-          return;
-      }
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect password' });
+      return;
+    }
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.username = userData.username;
+      req.session.loggedIn = true;
 
-      req.session.save(() => {
-          req.session.user_id = userData.id;
-          req.session.username = userData.username;
-          req.session.loggedIn = true;
-
-          res.json({ user: userData, message: 'You are now logged in!' });
-      });
+      res.json({ user: userData, message: 'You are now logged in!' });
+    })
   }).catch(err => {
-      console.log(err)
-      res.status(500).json(err);
+    console.log(err)
+    res.status(500).json(err);
   });
 });
 
@@ -107,6 +107,7 @@ router.post("/logout", (req, res) => {
 // Update a user
 router.put("/:id", (req, res) => {
   User.update(req.body, {
+    individualHooks: true,
     where: {
       id: req.params.id,
     },
