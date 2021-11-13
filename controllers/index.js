@@ -6,11 +6,11 @@ const apiRoutes = require('./api');
 
 router.use('/api' ,apiRoutes);
 
+// lori add 
+router.use('/', homeRoutes);
+
 router.use((req, res) => {
     res.status(404).end();
 })
-
-// lori add 
-router.use('/', homeRoutes);
 
 module.exports = router;
