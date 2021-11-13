@@ -61,7 +61,30 @@ router.post("/", (req, res) => {
 });
 
 // update gift
-router.put("/:id", (req, res) => { });
+router.put("/:id", (req, res) => {
+    Gift.update(
+        {
+            gift_name: req.body.gift_name,
+            price: req.body.price
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+    .then(giftData => {
+        if (!giftData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+        res.json(giftData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+}); 
 
 // delete a recipient
 router.delete("/:id", (req, res) => { });
