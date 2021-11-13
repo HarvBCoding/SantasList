@@ -9,7 +9,6 @@ Gift.init(
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true, 
-            allowNull: false
         },
         gift_name: {
             type: DataTypes.STRING,
@@ -18,6 +17,13 @@ Gift.init(
         price: {
             type: DataTypes.DECIMAL,
             allowNull: false
+        },
+        recipient_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'recipient',
+                key: 'id'
+            }
         }
     },
 {
@@ -28,3 +34,5 @@ Gift.init(
     modelName: 'gift'
 }
 );
+
+module.exports = Gift;
