@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
         where: {
             user_id: req.session.user_id
         },
-        attributes: ['name', 'relationship'],
+        attributes: ['id','name', 'relationship'],
         include: [
             {
                 model: Gift,
@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
     })
     .then(recipientData => {
         const recipients = recipientData.map(recipient => recipient.get({ plain: true}));
+        console.log(recipients[0].gifts);
         res.render('dashboard', { recipients, loggedIn: true });
     })
     .catch(err => {
@@ -28,7 +29,7 @@ router.get('/', (req, res) => {
 // edit single post
 router.get('/edit/:id', (req, res) => {
     Recipient.findByPk(req.params.id, {
-        attributes: ['name', 'relationship'],
+        attributes: ['id', 'name', 'relationship'],
         include: [
             {
                 model: Gift,

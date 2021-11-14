@@ -1,11 +1,7 @@
 <div class="recipient-info">
-    <h3>{{rec.name}}</h3>
-    <p>{{rec.relationship}}</p>
-    <ul>
-        {{#each rec.gifts as |gift|}}
-        <li>
-            {{gift}}
-        </li>
-        {{/each}}
-    </ul>
+    <h3>{{name}}</h3>
+    <p>{{relationship}}</p>
+
+    {{> gifts-list gifts}}
+    
 </div>
