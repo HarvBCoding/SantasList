@@ -21,6 +21,7 @@
         {{#each recipients as |rec|}}
         <li>
             {{> list-info rec}}
+            <a href='/dashboard/edit/{{rec.id}}' class="edit-link">Edit</a>
         </li>
         {{/each}}
     </ul>

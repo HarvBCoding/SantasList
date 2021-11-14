@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { Recipient, Gift, User } = require('../models');
 
 // GET all recipients for dashboard
@@ -17,7 +16,7 @@ router.get('/', (req, res) => {
         ]
     })
     .then(recipientData => {
-        const recipients = recipientData.map(rec => rec.get({ plain: true}));
+        const recipients = recipientData.map(recipient => recipient.get({ plain: true}));
         res.render('dashboard', { recipients, loggedIn: true });
     })
     .catch(err => {
