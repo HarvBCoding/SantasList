@@ -1,0 +1,28 @@
+<scetion>
+    <h2>Add a Name to the List</h2>
+
+    <form class="new-recipient-form">
+        <div>
+            <label for="recipient-name">Name</label>
+            <input type="text" id="recipient-name" name="recipient-name" />
+        </div>
+        <div>
+            <label for="rec-relationship">Relationship</label>
+            <input id="rec-relationship" name="rec-relationship" />
+        </div>
+        <button type="submit" class="btn">Add</button>
+    </form>
+</scetion>
+
+{{#if recipients.length}}
+<section>
+    <h2>Check Your List</h2>
+    <ul>
+        {{#each recipients as |rec|}}
+        <li>
+            {{> list-info rec}}
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
