@@ -39,58 +39,59 @@ router.get("/:id", (req, res) => {
 });
 
 // create a new user
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
   })
-    .then(userData => {
+    .then((userData) => {
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.username = userData.username;
         req.session.loggedIn = true;
 
         res.json(userData);
-
       });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
 // log in route
-router.post('/login', (req, res) => {
-  console.log('request', req.body);
+router.post("/login", (req, res) => {
+  console.log("request", req.body);
   User.findOne({
     where: {
-      email: req.body.email
-    }
-  }).then(userData => {
-    if (!userData) {
-      res.status(400).json({ message: 'No user with that email address' });
-      return;
-    }
+      email: req.body.email,
+    },
+  })
+    .then((userData) => {
+      if (!userData) {
+        res.status(400).json({ message: "No user with that email address" });
+        return;
+      }
 
-    const validPassword = userData.checkPassword(req.body.password);
+      const validPassword = userData.checkPassword(req.body.password);
 
-    if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password' });
-      return;
-    }
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.username = userData.username;
-      req.session.loggedIn = true;
+      if (!validPassword) {
+        res.status(400).json({ message: "Incorrect password" });
+        return;
+      }
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.username = userData.username;
+        req.session.loggedIn = true;
 
-      res.json({ user: userData, message: 'You are now logged in!' });
+        res.json({ user: userData, message: "You are now logged in!" });
+      });
     })
-  }).catch(err => {
-    console.log(err)
-    res.status(500).json(err);
-  });
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // Log out Route
