@@ -1,5 +1,5 @@
 <section>
-    <h2>Add a Name to Santa's List</h2>
+    <h2>Making a List</h2>
 
     <form class="new-recipient-form">
         <div>
@@ -16,12 +16,12 @@
 
 {{#if recipients.length}}
 <section>
-    <h2>Check Your List Twice</h2>
+    <h2>Checking it Twice</h2>
     <ul>
         {{#each recipients as |rec|}}
         <li>
             {{> list-info rec}}
-            <a href='/dashboard/edit/{{id}}' class="edit-link">Edit</a>
+            <a href='/dashboard/edit/{{rec.id}}' class="edit-link">Edit</a>
         </li>
         {{/each}}
     </ul>

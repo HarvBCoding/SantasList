@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
     })
     .then(recipientData => {
         const recipients = recipientData.map(recipient => recipient.get({ plain: true}));
-        console.log(recipients[0].gifts);
         res.render('dashboard', { recipients, loggedIn: true });
     })
     .catch(err => {
@@ -40,7 +39,6 @@ router.get('/edit/:id', (req, res) => {
     .then(recipientData => {
         if (recipientData) {
             const rec = recipientData.get({ plain: true });
-            
             res.render('edit-recipient', {rec, loggedIn: true});
 
         } else {
