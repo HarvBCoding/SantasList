@@ -4,13 +4,17 @@
   }
   
   body, html {
-    height: 100%;
+    min-height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
     color: rgb(49 77 55);
+    min-height: 100%;
     background-image: url('/images/christmas-pexels-tim-douglas.jpg');
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
   }
   
   a {
@@ -24,7 +28,7 @@
   a:hover {
     color: rgba(255, 255, 255, 0.384);
   }
-
+  
   #home-link {
     font-size: 25px;
     color: #920e13;
@@ -32,6 +36,15 @@
 
   #home-link:hover {
     color: #c51b20;
+  }
+
+  .edit-link {
+    font-size: 15px;
+    color: #d7142b;
+  }
+
+  .edit-link:hover {
+    color: #eb485b;
   }
   
   button {
@@ -110,7 +123,7 @@
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: #ffffff;
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -178,5 +191,6 @@
     display: flex;
     padding: 1%;
     font-size: 120%;
+    font-weight: bold;
     color: #981014;
   }
