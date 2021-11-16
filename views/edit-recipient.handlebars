@@ -4,8 +4,8 @@
   </h2>
   <form class="edit-recipient-form">
     <div>
-      <input name="recipient-name" type="text" value="{{name}}" />
-      <input name="recipient-relationship" , type="text" value="{{relationship}}" />
+      <input name="recipient-name" type="text" value="{{rec.name}}" />
+      <input name="recipient-relationship" , type="text" value="{{rec.relationship}}" />
     </div>
     <button type="submit">Save</button>
     <button type="button" class="delete-rec-btn">Delete Recipient</button>
@@ -14,13 +14,15 @@
   <h2>
     Edit Gift
   </h2>
+  {{#each rec.gifts as |gift|}}
   <form class="edit-gift-form">
     <div>
-      <input name="gift-name" type="text" value="{{gift.name}}" />
+      <input name="gift-name" type="text" value="{{gift.gift_name}}" />
       <input name="gift-price" type="number" value="{{gift.price}}" />
     </div>
     <button type="submit">Save</button>
     <button type="button" class="delete-gift-btn">Delete Gift 🗑 </button>
   </form>
+  {{/each}}
 
 </article>

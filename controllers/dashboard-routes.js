@@ -40,6 +40,7 @@ router.get('/edit/:id', (req, res) => {
     .then(recipientData => {
         if (recipientData) {
             const rec = recipientData.get({ plain: true });
+            console.log("🚀 ~ file: dashboard-routes.js ~ line 43 ~ router.get ~ rec", rec)
             res.render('edit-recipient', {rec, loggedIn: true});
             
         } else {
