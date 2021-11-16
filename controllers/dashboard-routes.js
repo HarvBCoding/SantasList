@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 
 // edit single post
 router.get('/edit/:id', (req, res) => {
-    console.log("here" , req.params);
+    
     Recipient.findByPk(req.params.id, {
         attributes: ['id', 'name', 'relationship'],
         include: [
@@ -40,7 +40,6 @@ router.get('/edit/:id', (req, res) => {
     .then(recipientData => {
         if (recipientData) {
             const rec = recipientData.get({ plain: true });
-            console.log("🚀 ~ file: dashboard-routes.js ~ line 43 ~ router.get ~ rec", rec)
             res.render('edit-recipient', {rec, loggedIn: true});
             
         } else {

@@ -1,6 +1,6 @@
 <article>
   <h2>
-    Edit Post
+    Who's Been Naughty?
   </h2>
   <form class="edit-recipient-form">
     <div>
@@ -8,12 +8,23 @@
       <input name="recipient-relationship" , type="text" value="{{rec.relationship}}" />
     </div>
     <button type="submit">Save</button>
-    <button type="button" class="delete-rec-btn">Delete Recipient</button>
+    <button type="button" class="delete-rec-btn">Delete</button>
   </form>
 
   <h2>
-    Edit Gift
+    Or Nice?
   </h2>
+  <br>
+  <form class="add-gift-form">
+    <div>
+      <h3>Add a Gift</h3>
+      <input name="add-gift" type="text" value="Gift Name"/>
+      <input name="add-price" type="text" value="Gift Price"/>
+      <button type="submit" id="add-gift">Add</button>
+    </div>
+  </form>
+  <br>
+  <h3>Edit {{rec.name}}'s Current Gifts</h3>
   {{#each rec.gifts as |gift|}}
   <form class="edit-gift-form">
     <div>
@@ -21,7 +32,7 @@
       <input name="gift-price" type="number" value="{{gift.price}}" />
     </div>
     <button type="submit">Save</button>
-    <button type="button" class="delete-gift-btn">Delete Gift 🗑 </button>
+    <button type="button" class="delete-gift-btn">Delete 🗑 </button>
   </form>
   {{/each}}
 
