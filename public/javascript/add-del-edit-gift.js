@@ -32,7 +32,6 @@ async function deleteGiftHandler(event) {
   event.preventDefault();
 
   const id = document.getElementById("gift-name").name
-  console.log("🚀 ~ file: add-del-edit-gift.js ~ line 35 ~ deleteGiftHandler ~ id", id)
   
   const response = await fetch(`/api/gifts/${id}`, {
     method: 'DELETE'
@@ -50,7 +49,6 @@ for (let i = 0; i < deleteBtns.length; i++) {
   deleteBtns[i].addEventListener('click', deleteGiftHandler);
 }
 
-console.log("🚀 ~ file: add-del-edit-gift.js ~ line 49 ~ deleteBtns", deleteBtns)
 document.querySelector('.add-gift-form').addEventListener('submit' , addGiftHandler);
 
 
