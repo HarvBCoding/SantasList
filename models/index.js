@@ -14,12 +14,14 @@ Recipient.belongsTo(User, {
 
 // gift 
 Gift.belongsTo(Recipient, {
-    foreignKey: 'recipient_id'
+    foreignKey: 'recipient_id',
+    onDelete: 'SET NULL'
 });
 
 // recipient has many gifts
 Recipient.hasMany(Gift, {
-    foreignKey: 'recipient_id'
+    foreignKey: 'recipient_id',
+    onDelete: 'SET NULL'
 });
 
 module.exports = { User, Recipient, Gift }
