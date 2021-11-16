@@ -5,7 +5,7 @@
   <form class="edit-recipient-form">
     <div>
       <input name="recipient-name" type="text" value="{{rec.name}}" />
-      <input name="recipient-relationship" , type="text" value="{{rec.relationship}}" />
+      <input name="recipient-relationship" type="text" value="{{rec.relationship}}" />
     </div>
     <button type="submit">Save</button>
     <button type="button" class="delete-rec-btn">Delete</button>
@@ -18,8 +18,8 @@
   <form class="add-gift-form">
     <div>
       <h3>Add a Gift</h3>
-      <input name="add-gift"  id= "add-gift" type="text" value="Gift Name"/>
-      <input name="add-price" id= "add-price" type="text" value="Gift Price"/>
+      <input id="add-gift" name="add-gift" type="text" value="Gift Name"/>
+      <input id="add-price" name="add-price" type="text" value="Gift Price"/>
       <button type="submit" id="add-gift">Add</button>
     </div>
   </form>
@@ -28,8 +28,8 @@
   {{#each rec.gifts as |gift|}}
   <form class="edit-gift-form">
     <div>
-      <input name="gift-name" type="text" value="{{gift.gift_name}}" />
-      <input name="gift-price" type="number" value="{{gift.price}}" />
+      <input id="gift-name" name="{{gift.id}}" type="text" value="{{gift.gift_name}}" />
+      <input id="gift-price" name="gift-price" type="number" value="{{gift.price}}" />
     </div>
     <button type="submit">Save</button>
     <button type="button" class="delete-gift-btn">Delete 🗑 </button>
@@ -38,4 +38,4 @@
 
 </article>
 
-<script src="/javascript/add-del-edit-gift.js"></script>
+<script src ="/javascript/add-del-edit-gift.js"></script>

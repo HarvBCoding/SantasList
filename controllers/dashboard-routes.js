@@ -33,7 +33,7 @@ router.get('/edit/:id', (req, res) => {
         include: [
             {
                 model: Gift,
-                attributes: ['gift_name', 'price']
+                attributes: ['id' ,'gift_name', 'price']
             }
         ]
     })
