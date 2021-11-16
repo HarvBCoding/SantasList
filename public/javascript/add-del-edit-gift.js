@@ -31,7 +31,7 @@ async function addGiftHandler(event) {
 async function deleteGiftHandler(event) {
   event.preventDefault();
 
-  const id = document.getElementById("gift-name").name
+  const id = this.id
   
   const response = await fetch(`/api/gifts/${id}`, {
     method: 'DELETE'
@@ -44,11 +44,10 @@ async function deleteGiftHandler(event) {
   }
 }
 
+document.querySelector('.add-gift-form').addEventListener('submit' , addGiftHandler);
+
 const deleteBtns = document.querySelectorAll('.delete-gift-btn');
 for (let i = 0; i < deleteBtns.length; i++) {
   deleteBtns[i].addEventListener('click', deleteGiftHandler);
 }
-
-document.querySelector('.add-gift-form').addEventListener('submit' , addGiftHandler);
-
 
