@@ -1,8 +1,8 @@
 async function loginFormHandler(event) {
   event.preventDefault();
 
-  const email = document.querySelector("#email-login").value.trim();
-  const password = document.querySelector("#password-login").value.trim();
+  const email = document.querySelector("#email-login").value;
+  const password = document.querySelector("#password-login").value;
 
   if (email && password) {
     const response = await fetch("/api/users/login", {
@@ -15,9 +15,11 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace("/dashboard/");
     } else {
       alert(response.statusText);
     }
   }
 }
+
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);

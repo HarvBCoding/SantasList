@@ -4,8 +4,8 @@
   </h2>
   <form class="edit-recipient-form">
     <div>
-      <input name="recipient-name" type="text" value="{{rec.name}}" />
-      <input name="recipient-relationship" type="text" value="{{rec.relationship}}" />
+      <input id="rec-name" name="recipient-name" type="text" value="{{rec.name}}" />
+      <input id="rec-relationship" name="recipient-relationship" type="text" value="{{rec.relationship}}" />
     </div>
     <button type="submit">Save</button>
     <button type="button" class="delete-rec-btn">Delete</button>
@@ -38,4 +38,5 @@
   </div>
 </article>
 
+<script src="/javascript/edit-delete-rec.js"></script>
 <script src="/javascript/add-del-edit-gift.js"></script>
