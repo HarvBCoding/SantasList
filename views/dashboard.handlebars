@@ -1,13 +1,15 @@
-<section>
-    <h2>Making a List</h2>
-
+<section class="add-recipient">
+    <h2>
+        <span class="form-title">Making a List</span>
+    </h2>
+    <br>
     <form class="new-recipient-form">
         <div>
-            <label for="recipient-name">Name</label>
+            <label for="recipient-name">Name:</label>
             <input type="text" id="recipient-name" name="recipient-name" />
         </div>
         <div>
-            <label for="rec-relationship">Relationship</label>
+            <label for="rec-relationship">Relationship:</label>
             <input id="rec-relationship" name="rec-relationship" />
         </div>
         <button type="submit" class="btn">
@@ -17,8 +19,11 @@
 </section>
 
 {{#if recipients.length}}
-<section>
-    <h2>Checking it Twice</h2>
+<section class="recipient-gift">
+    <h2>
+        <span class="form-title">Checking it Twice</span>
+    </h2>
+    <br>
     <ul>
         {{#each recipients as |rec|}}
         <li>

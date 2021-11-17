@@ -30,12 +30,14 @@
   }
   
   #home-link {
-    font-size: 25px;
-    color: #920e13;
+    font-size: 2.3rem;
+    -webkit-text-stroke: 1px #981014;
+	  -webkit-text-fill-color: white;
   }
 
   #home-link:hover {
-    color: #c51b20;
+    -webkit-text-stroke: 1px white;
+	  -webkit-text-fill-color: #981014;
   }
 
   .edit-link {
@@ -73,6 +75,15 @@
   
   form label {
     display: block;
+  }
+
+  .form-title {
+    border-bottom: 2px solid #d7142b;
+    padding: 5px 0px
+  }
+
+  .secondary-title {
+    padding-top: 15px;
   }
   
   .wrapper {
@@ -119,23 +130,22 @@
     color: rgba(255, 255, 255, 0.384);
   }
   
-  .delete-post-btn {
+  .delete-btn {
     background-color: #d41414;
   }
   
-  .delete-post-btn:hover {
+  .delete-btn:hover {
     background-color: #ff643d;
   }
-  
-  .recipient {
-    margin-bottom: 2%;
-    line-height: 150%;
+
+  .add-recipient {
+    padding-bottom: 30px;
   }
-  
-  .recipient .title {
-    font-style: italic;
-    font-size: 90%;
-    color: #7d7d7d;
+
+  .new-recipient-form label {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 8px;
   }
   
   .edit-link {
@@ -143,38 +153,25 @@
     margin: -1.5% 0 2% 0;
   }
   
-  .comment-form {
-    margin-bottom: 5%;
-  }
-  
-  .comment {
-    padding: 1%;
-    margin-bottom: 1%;
-  }
-  
-  .comment:nth-child(odd) {
-    background-color: #fff5eb;
-  }
-  
-  .comment .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
-  }
-  
-  .new-post-form input {
-    width: 300px;
-  }
-  
   .edit-recipient-form {
     margin-bottom: 5%;
+  }
+
+  .edit-gift-form {
+      padding: 10px 0px;
+  }
+
+  .gift-list {
+    padding-bottom: 10px;
+    color: #af121b;
   }
   
   footer {
     border-top: 1px solid #ccc;
     display: flex;
     padding: 1%;
-    font-size: 120%;
-    font-weight: bold;
-    color: #981014;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    -webkit-text-stroke: 1px white;
+	  -webkit-text-fill-color: #981014;
   }

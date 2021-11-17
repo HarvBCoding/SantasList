@@ -1,25 +1,25 @@
 <article>
   <h2>
-    Who's Been Naughty?
+    <span class="form-title">Who's Been Naughty?</span>
   </h2>
   <form class="edit-recipient-form">
     <div>
-      <h3>Add a Name to Your List</h3>
+      <h3 class="secondary-title">Add a Name to Your List</h3>
       <input id="rec-name" name="recipient-name" type="text" value="{{rec.name}}" />
       <input id="rec-relationship" name="recipient-relationship" type="text" value="{{rec.relationship}}" />
     </div>
     <button type="submit">Save</button>
-    <button type="button" class="delete-rec-btn">
+    <button type="button" class="delete-btn">
      Delete
     </button>
   </form>
 
   <h2>
-    Or Nice?
+    <span class="form-title">Or Nice?</span>
   </h2>
   <form class="add-gift-form">
     <div>
-      <h3>Add a Gift</h3>
+      <h3 class="secondary-title">Add a Gift</h3>
       <input id="add-gift" name="add-gift" type="text" value="Gift Name" />
       <input id="add-price" name="add-price" type="text" value="Gift Price" />
       <button type="submit" id="add-gift">Add</button>
@@ -34,7 +34,7 @@
         <input id="gift-price" name="gift-price" type="number" value="{{gift.price}}" />
         <input type="hidden" id="gift-id" value="{{gift.id}}"/> 
       <button id= "{{gift.id}}" class="save-btn" type="submit">Save</button>
-      <button id="{{gift.id}}" type="button" class="delete-gift-btn">Delete</button>
+      <button id="{{gift.id}}" type="button" class="delete-btn">Delete</button>
     </div>
     </form>
     {{/each}}
