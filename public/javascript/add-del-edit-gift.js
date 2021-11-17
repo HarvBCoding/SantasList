@@ -46,40 +46,39 @@ async function deleteGiftHandler(event) {
 
 // edit gift 
 
-// async function editGiftHandler(event) {
-//     event.preventDefault();
+async function editGiftHandler(event) {
+    event.preventDefault();
 
-//     const gift_name = document.querySelector("#gift-name").value;
-//     console.log("🚀 ~ file: add-del-edit-gift.js ~ line 53 ~ editGiftHandler ~ #gift-name", #gift-name)
+    const gift_name = document.querySelector("#gift-name").value;
+    console.log("🚀 ~ file: add-del-edit-gift.js ~ line 53 ~ editGiftHandler ~ gift_name", gift_name)
 
-//     const price = document.querySelector("#gift-price").value;
+    const price = document.querySelector("#gift-price").value;
+    console.log("🚀 ~ file: add-del-edit-gift.js ~ line 56 ~ editGiftHandler ~ price", price)
    
-//     const gift_id = window.location.toString().split("/")[
-//       window.location.toString().split("/").length - 1
-//     ];
+    const gift_id = document.getElementById("gift-id").value;
+    console.log("🚀 ~ file: add-del-edit-gift.js ~ line 59 ~ editGiftHandler ~ gift_id", gift_id)
 
-//     const response = await fetch(`/api/gifts/${id}`, {
-//         method: 'PUT',
-//         body: JSON.stringify({
-//             gift_name,
-//             price,
-//             gift_id
-//     }),
-//     headers: {
-//         'Content-Type': 'application/json'
-//       }
-//     });
-//     if (response.ok) {
-//       document.location.reload(`/dashboard/`);
-//     } else {
-//       alert(response.statusText);
-//     }
-//   }
+    const response = await fetch(`/api/gifts/${gift_id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            gift_name,
+            price
+    }),
+    headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    if (response.ok) {
+      document.location.reload(`/dashboard/`);
+    } else {
+      alert(response.statusText);
+    }
+  }
     
 //     // end
 
 
-//   document.querySelector('.edit-post-form').addEventListener('submit', editGiftHandler);
+  document.querySelector('.edit-gift-form').addEventListener('submit', editGiftHandler);
   
   document.querySelector('.add-gift-form').addEventListener('submit' , addGiftHandler);
   
