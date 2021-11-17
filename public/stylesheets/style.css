@@ -42,7 +42,7 @@
 
   .countdown {
     display: inline-block;
-    font-size: 20px;
+    font-size: 25px;
   }
 
   #end {
@@ -89,6 +89,16 @@
   .form-title {
     border-bottom: 2px solid #d7142b;
     padding: 5px 0px
+  }
+
+  .main-title {
+    color: #d7142b;
+    font-size: 25px;
+    padding-bottom: 5px;
+  }
+
+  .login-form {
+    padding-top: 30px;
   }
 
   .secondary-title {
