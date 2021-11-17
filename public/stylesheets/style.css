@@ -43,6 +43,8 @@
   .countdown {
     display: inline-block;
     font-size: 25px;
+    -webkit-text-stroke: 1px white;
+	  -webkit-text-fill-color: #0c755d;
   }
 
   #end {
