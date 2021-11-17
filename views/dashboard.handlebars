@@ -10,7 +10,9 @@
             <label for="rec-relationship">Relationship</label>
             <input id="rec-relationship" name="rec-relationship" />
         </div>
-        <button type="submit" class="btn">Add</button>
+        <button type="submit" class="btn">
+            Add
+        </button>
     </form>
 </section>
 
@@ -24,6 +26,10 @@
         </li>
         {{/each}}
     </ul>
+</section>
+{{else}}
+<section>
+    <h2>Add a Name to Start Your List</h2>
 </section>
 {{/if}}
 <script src="/javascript/add-recipient.js"></script>

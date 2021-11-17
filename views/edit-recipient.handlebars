@@ -4,17 +4,19 @@
   </h2>
   <form class="edit-recipient-form">
     <div>
+      <h3>Add a Name to Your List</h3>
       <input id="rec-name" name="recipient-name" type="text" value="{{rec.name}}" />
       <input id="rec-relationship" name="recipient-relationship" type="text" value="{{rec.relationship}}" />
     </div>
     <button type="submit">Save</button>
-    <button type="button" class="delete-rec-btn">Delete</button>
+    <button type="button" class="delete-rec-btn">
+     Delete
+    </button>
   </form>
 
   <h2>
     Or Nice?
   </h2>
-  <br>
   <form class="add-gift-form">
     <div>
       <h3>Add a Gift</h3>
@@ -30,9 +32,9 @@
     <form class="edit-gift-form">
         <input id="gift-name" name="gift-name" type="text" value="{{gift.gift_name}}" />
         <input id="gift-price" name="gift-price" type="number" value="{{gift.price}}" />
-      </div>
       <button type="submit">Save</button>
-      <button id="{{gift.id}}" type="button" class="delete-gift-btn">Delete 🗑 </button>
+      <button id="{{gift.id}}" type="button" class="delete-gift-btn">Delete</button>
+    </div>
     </form>
     {{/each}}
   </div>
