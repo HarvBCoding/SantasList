@@ -40,6 +40,15 @@
 	  -webkit-text-fill-color: #981014;
   }
 
+  .countdown {
+    display: inline-block;
+    font-size: 20px;
+  }
+
+  #end {
+    color: #d7142b
+  }
+
   .edit-link {
     font-size: 15px;
     color: #d7142b;
