@@ -20,13 +20,10 @@ async function editGiftHandler(event) {
     event.preventDefault();
 
     const gift_name = document.querySelector("#gift-name").value;
-    console.log("🚀 ~ file: add-del-edit-gift.js ~ line 53 ~ editGiftHandler ~ gift_name", gift_name)
 
     const price = document.querySelector("#gift-price").value;
-    console.log("🚀 ~ file: add-del-edit-gift.js ~ line 56 ~ editGiftHandler ~ price", price)
    
     const gift_id = document.getElementById("gift-id").value;
-    console.log("🚀 ~ file: add-del-edit-gift.js ~ line 59 ~ editGiftHandler ~ gift_id", gift_id)
 
     const rec_id = window.location.toString().split("/")[
       window.location.toString().split("/").length - 1
@@ -52,7 +49,7 @@ async function editGiftHandler(event) {
 document.querySelector('.edit-gift-form').addEventListener('submit', editGiftHandler);
     
 
-const deleteBtns = document.querySelectorAll('.delete-gift-btn');
+const deleteBtns = document.querySelectorAll('.delete-btn');
 for (let i = 0; i < deleteBtns.length; i++) {
   deleteBtns[i].addEventListener('click', deleteGiftHandler);
 }

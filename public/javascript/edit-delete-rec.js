@@ -44,5 +44,5 @@ async function deleteRecHandler(event) {
     }
 }
 
-document.querySelector('.edit-recipient-form').addEventListener('click', deleteRecHandler);
-document.querySelector(".edit-recipient-form").addEventListener("submit", editRecHandler);
+document.querySelector('#rec-delete-btn').addEventListener('click', deleteRecHandler);
+document.querySelector("#save-rec-btn").addEventListener("submit", editRecHandler);
