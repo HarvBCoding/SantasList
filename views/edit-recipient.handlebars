@@ -30,12 +30,11 @@
   <div class="delete-gift">
     {{#each rec.gifts as |gift|}}
     <form class="edit-gift-form">
-        <input id="gift-name" name="{{gift.id}}" type="text" value="{{gift.gift_name}}" />
+        <input id="gift-name" name="gift-name" type="text" value="{{gift.gift_name}}" />
         <input id="gift-price" name="gift-price" type="number" value="{{gift.price}}" />
         <input type="hidden" id="gift-id" value="{{gift.id}}"/> 
       <button id= "{{gift.id}}" class="save-btn" type="submit">Save</button>
       <button id="{{gift.id}}" type="button" class="delete-btn">Delete</button>
-    </div>
     </form>
     {{/each}}
   </div>
