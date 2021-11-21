@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 
 class User extends Model {
   checkPassword(loginPw) {
-      // using [this] keyword the user's properties (including password) can be accessed
       return bcrypt.compareSync(loginPw, this.password);
   }
 }

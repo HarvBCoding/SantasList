@@ -44,11 +44,10 @@ async function editGiftHandler(event) {
     } else {
       alert(response.statusText);
     }
-  }
+}
 
 document.querySelector('.edit-gift-form').addEventListener('submit', editGiftHandler);
     
-
 const deleteBtns = document.querySelectorAll('.delete-btn');
 for (let i = 0; i < deleteBtns.length; i++) {
   deleteBtns[i].addEventListener('click', deleteGiftHandler);

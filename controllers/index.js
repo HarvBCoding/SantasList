@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// Lori add - 
+
 const homeRoutes = require('./home-routes.js');
 
 const apiRoutes = require('./api');
@@ -8,7 +8,7 @@ const dashboardRoutes = require('./dashboard-routes.js');
 router.use('/api' ,apiRoutes);
 router.use('/dashboard', dashboardRoutes);
 
-// lori add 
+
 router.use('/', homeRoutes);
 
 router.use((req, res) => {

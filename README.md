@@ -1,5 +1,5 @@
 
-  # Santa's List
+  # Santa's Nice List
   
 
   ## Description
@@ -15,7 +15,7 @@
   
 
   ## Installation Instructions
-  Navigate to deployed website
+  Navigate to [Santa's Nice List](https://santasnicelist.herokuapp.com/)
 
   ## Usage
   Navigate to the signup link in the upper-right corner and enter a username, valid email, and password. Once you've signed-in or logged on the site will direct you to your dashboard where you can start your own list.
