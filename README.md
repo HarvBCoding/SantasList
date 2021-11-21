@@ -3,7 +3,7 @@
   
 
   ## Description
-  Santa's List is the perfect app for users who are writing their Christmas lists on paper. Create a password-protected log-in to keep your list and their gifts away from prying eyes and organized.
+  Santa's Nice List is the perfect app for users who are writing their Christmas lists on paper. Create a password-protected log-in to keep your list and their gifts away from prying eyes and organized.
 
   ## Table of Contents
   * [Installation](#installation-instructions)
@@ -27,8 +27,8 @@
   
   ## Examples
   Pictures of Website
-  ![HomePage](public/images/SL-home-page.png)
-  ![Dashboard](public/images/SL-dashboard.png)
+  ![HomePage](public/images/SNLHomePage.png)
+  ![Dashboard](public/images/SNLDashboard.png)
 
   ## Questions
   If you have any questions or need to report bugs please reach out to Lori Timmons at [LoriTimmons](https://www.github.com/LoriTimmons) or Bre Harvey at [HarvBCoding](https://www.github.com/HarvBCoding).
