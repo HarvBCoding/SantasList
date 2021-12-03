@@ -18,12 +18,12 @@ async function deleteGiftHandler(event) {
 
 async function editGiftHandler(event) {
     event.preventDefault();
-
-    const gift_name = document.querySelector("#gift-name").value;
-
-    const price = document.querySelector("#gift-price").value;
    
-    const gift_id = document.getElementById("gift-id").value;
+    const gift_id = this.id
+
+    const gift_name = document.querySelector(`#gift-name${gift_id}`).value;
+
+    const price = document.querySelector(`#gift-price${gift_id}`).value;
 
     const rec_id = window.location.toString().split("/")[
       window.location.toString().split("/").length - 1
@@ -40,13 +40,18 @@ async function editGiftHandler(event) {
       }
     });
     if (response.ok) {
+      debugger;
       document.location.replace(`/dashboard/edit/${rec_id}`);
     } else {
       alert(response.statusText);
     }
 }
 
-document.querySelector('.edit-gift-form').addEventListener('submit', editGiftHandler);
+// document.querySelector('.edit-gift-form').addEventListener('submit', editGiftHandler);
+const saveBtns = document.querySelectorAll('.save-btn');
+for (let i = 0; i < saveBtns.length; i++) {
+  saveBtns[i].addEventListener('click', editGiftHandler);
+}
     
 const deleteBtns = document.querySelectorAll('.delete-btn');
 for (let i = 0; i < deleteBtns.length; i++) {
