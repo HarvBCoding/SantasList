@@ -8,10 +8,9 @@
   ## Table of Contents
   * [Installation](#installation-instructions)
   * [Usage](#usage)
+  * [Technologies](#technologies)
   * [Examples](#examples)
   * [Questions](#questions)
-  
-  
   
 
   ## Installation Instructions
@@ -21,8 +20,8 @@
   Navigate to the signup link in the upper-right corner and enter a username, valid email, and password. Once you've signed-in or logged on the site will direct you to your dashboard where you can start your own list.
 
   
-  ## Contributing
-  I appreciate your interest in improving this project, however I am not accepting contributions at this time.
+  ## Technologies
+  JavaScript, SQL, Sequelize, Express.js, Node.js
   
   
   ## Examples
