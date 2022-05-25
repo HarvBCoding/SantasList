@@ -1,9 +1,12 @@
 <div class="recipient-info">
+    <div>
     <h3>{{name}}</h3>
+    </div>
     <p>{{relationship}}</p>
-    </br>
-    <a href='/dashboard/edit/{{id}}' class="edit-link">Edit</a>
-
+    <button class="btn">
+      <a href='/dashboard/edit/{{id}}'>Edit</a>
+    </button>
+    <br>
     {{> gifts-list gifts}}
 
 </div>

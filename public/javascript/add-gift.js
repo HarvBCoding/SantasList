@@ -1,3 +1,5 @@
+document.getElementById("body").style.backgroundImage = "url(https://res.cloudinary.com/dceprxjzq/image/upload/v1653443692/Santa%27sList/pexels-olya-kobruseva-xmas-wrappingo-paper.jpg)"
+
 async function addGiftHandler(event) {
     event.preventDefault();
   

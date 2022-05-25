@@ -1,4 +1,10 @@
 /* 14 style sheet. Prob need to replace  */
+:root {
+  --gold: #d7ab82;
+  --green: #0c755d;
+  --silver: #d1c7cf;
+}
+
 * {
     box-sizing: border-box;
   }
@@ -8,7 +14,7 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    color: rgb(49 77 55);
+    color: var(--gold);
     background-image: url('https://res.cloudinary.com/dceprxjzq/image/upload/v1653443692/Santa%27sList/pexels-olya-kobruseva-xmas-truck.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -36,39 +42,35 @@
   
   #home-link {
     font-size: 2.3rem;
-    -webkit-text-stroke: 1px #981014;
+    -webkit-text-stroke: 1px var(--green);
 	  -webkit-text-fill-color: white;
   }
 
   #home-link:hover {
     -webkit-text-stroke: 1px white;
-	  -webkit-text-fill-color: #981014;
+	  -webkit-text-fill-color: var(--green);
   }
 
   .countdown {
     display: inline-block;
     font-size: 25px;
     -webkit-text-stroke: 1px white;
-	  -webkit-text-fill-color: #0c755d;
+	  -webkit-text-fill-color: var(--green);
   }
 
   #end {
-    color: #d7142b
+    color: var(--silver);
   }
 
-  .edit-link {
-    font-size: 15px;
-    color: #d7142b;
-  }
 
   .edit-link:hover {
     color: #eb485b;
   }
   
   button {
-    background-color: #0c755d;
+    background-color: var(--green);
     border: 0;
-    padding: 1%;
+    padding: .75%;
     color: white;
     font-weight: bold;
     transition: background-color .1s;
@@ -94,7 +96,7 @@
   }
 
   .form-title {
-    border-bottom: 2px solid #d7142b;
+    border-bottom: 2px solid var(--silver);
     padding: 5px 0px
   }
 
@@ -179,10 +181,6 @@
     padding-bottom: 8px;
   }
   
-  .edit-link {
-    display: block;
-    margin: -1.5% 0 2% 0;
-  }
   
   .edit-recipient-form {
     margin-bottom: 5%;
@@ -192,9 +190,13 @@
       padding: 10px 0px;
   }
 
+  .gifts {
+    padding: 2rem 0rem;
+  }
+
   .gift-list {
     padding-bottom: 10px;
-    color: #af121b;
+    color: var(--silver);
   }
   
   footer {
@@ -204,5 +206,5 @@
     font-size: 1.8rem;
     font-weight: bolder;
     -webkit-text-stroke: 1px white;
-	  -webkit-text-fill-color: #981014;
+	  -webkit-text-fill-color: var(--green);
   }
