@@ -3,6 +3,7 @@
   --gold: #d7ab82;
   --green: #0c755d;
   --silver: #d1c7cf;
+  --red: #bf1f27;
 }
 
 * {
@@ -24,8 +25,23 @@
 
   #main-desc {
     max-width: 35rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 1.5rem;
+    color: var(--red);
+    background-color: rgba(224, 224, 224, 0.506);
+    border-radius: 10px;
+    line-height: 30px;
+    font-size: 1.2rem;
+  }
+
+  .login-label {
+    color: var(--red);
+    font-size: larger;
+  }
+
+  #signup-link {
+    color: var(--green);
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--green);
   }
   
   a {
@@ -101,13 +117,18 @@
   }
 
   .main-title {
-    color: #d7142b;
+    color: var(--red);
     font-size: 25px;
     padding-bottom: 5px;
+    -webkit-text-stroke: 1px white;
+	  -webkit-text-fill-color: var(--red);
   }
 
   .login-form {
-    padding-top: 30px;
+    padding: 25px 15px 30px;
+    background-color: rgba(224, 224, 224, 0.506);
+    max-width: 35rem;
+    border-radius: 10px;
   }
 
   .secondary-title {
