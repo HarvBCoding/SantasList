@@ -9,12 +9,17 @@
     margin: 0;
     font-family: sans-serif;
     color: rgb(49 77 55);
-    min-height: 100%;
-    background-image: url('/images/christmas-pexels-tim-douglas.jpg');
+    background-image: url('https://res.cloudinary.com/dceprxjzq/image/upload/v1653443692/Santa%27sList/pexels-olya-kobruseva-xmas-truck.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-attachment: fixed;
+  }
+
+  #main-desc {
+    max-width: 35rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   
   a {
