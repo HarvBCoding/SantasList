@@ -86,7 +86,7 @@
   button {
     background-color: var(--green);
     border: 0;
-    padding: .75%;
+    padding: 1%;
     color: white;
     font-weight: bold;
     transition: background-color .1s;
@@ -102,6 +102,15 @@
     margin: 0;
     padding: 0;
   }
+
+  .recipient-info {
+    background-color: #a6785d82;
+    margin: 2rem 0rem;
+    padding: 1rem;
+    max-width: 30rem;
+    border-radius: 20px;
+    color: whitesmoke;
+  }
   
   form > div {
     margin-bottom: 2%;
@@ -114,6 +123,10 @@
   .form-title {
     border-bottom: 2px solid var(--silver);
     padding: 5px 0px
+  }
+
+  .form-title.list-title {
+    margin-left: 2.5rem;
   }
 
   .main-title {
@@ -212,11 +225,11 @@
   }
 
   .gifts {
-    padding: 2rem 0rem;
+    padding: 2rem 1rem;
   }
 
   .gift-list {
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     color: var(--silver);
   }
   
